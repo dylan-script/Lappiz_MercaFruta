@@ -1,0 +1,1 @@
+#UrlBase#/MercaFruta_Lappiz_Pedido?$filter=MercaFruta_Lappiz_Pedido.CompradorFk eq '#JSON.parse(sessionStorage.LappizUser).CompradorFk#'
