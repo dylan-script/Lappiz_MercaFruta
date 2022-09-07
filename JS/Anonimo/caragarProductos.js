@@ -5,6 +5,15 @@ setTimeout(() => {
 
   if (idVista == 'd94d2d0c-ba08-42ce-8d59-3025352a0f1c') {
       debugger
+    
+      $('[title="Cancelar"]').hide()
+      $('a#ngb-nav-1').hide()
+      $('label.control-label').hide()
+      $('a.btn').first().hide()
+      $('div.col').first().prepend($('.img-logo-register'))
+      $('div.form-section-title').hide()
+      $('a#ngb-nav-0').hide() 
+
       var urltoken = `${backandGlobal.url}/token`;
       var urlquery = `${backandGlobal.api2}/MercaFruta_Lappiz.api/api/lappiz/sp/query`
       var products = 'select * from MercaFruta_Lappiz_Productos where CantidadDetal > 0 OR CantidadMayor > 0 order by Nombre asc'; 

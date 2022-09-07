@@ -4,6 +4,7 @@ var url = location.href;
 
     if (idVista == 'd94d2d0c-ba08-42ce-8d59-3025352a0f1c') {
         debugger
+
         setTimeout(() => {
 
             $('.red-prov').ready(() => {
