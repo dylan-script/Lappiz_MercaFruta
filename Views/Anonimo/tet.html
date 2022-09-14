@@ -4,6 +4,9 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
   .bor-barra-cat {
     border-width: thin;
@@ -153,6 +156,12 @@
     position: relative;
     padding: 0.5em;
     height: 377px;
+    color: #0000;
+    text-align: center;
+  }
+
+  .parque img {
+    width: 100%;
   }
 
   .texto-p {
@@ -160,6 +169,10 @@
     top: 50%;
     z-index: 1;
     transform: translate(0, -50%)
+  }
+
+  .cualidades>h3 {
+    text-align: center;
   }
 </style>
 <div class="land">
@@ -356,5 +369,25 @@
   <!-- Cualidades -->
   <div class="cualidades">
     <h3>Cualidades</h3>
-</div>
+    <div class="cualidades-container">
+      <div class="cualidades-left">
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet. Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt autem dolores!</li>
+            <li>
+              <p>Stats icon on a styled link button:
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-stats"></span>
+        </a>
+      </p> 
+            </li>
+          </ul>
+        </div>
+        <div class="row"></div>
+        <div class="row"></div>
+      </div>
+      <div class="cualidades-center"></div>
+      <div class="cualidades-right"></div>
+    </div>
+  </div>
 </div>
