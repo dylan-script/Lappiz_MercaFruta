@@ -1,0 +1,236 @@
+
+<div class="reg">
+  <form id="regForm" style="margin-left: 21px; height: 100%;">
+      <div class="row" style="height: 5%;"></div>
+
+      <div class="row" style=" width: 100%; height: 60%;">
+
+          <div class="col" style="width: 50%;">
+              <br>
+              <div class="row">
+                  <div class="col"></div>
+                  <div class="col">
+                      <h3 style="color: #6CA90E;">Registrarse</h3>
+                  </div>
+                  <div class="col"></div>
+              </div>
+              <hr>
+              <br>
+              <div class="row">
+
+                  <div class="col"></div>
+
+                  <div class="col">
+                      <input type="text" id="email" placeholder="Correo electrónico" required>
+                      <small></small>
+                  </div>
+                  <div class="col"></div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col"></div>
+
+                  <div class="col">
+                      <input type="password" id="password" placeholder="Contraseña" required>
+                      <small></small>
+                  </div>
+                  <div class="col"></div>
+
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col"></div>
+
+                  <div class="col">
+                      <input type="password" id="password2" placeholder="Contraseña" required>
+                      <small></small>
+                  </div>
+                  <div class="col"></div>
+              </div>
+
+              <br>
+              <div class="row">
+                  <div class="col"></div>
+
+                  <input type="submit" class="btn back-verde" style="color: white;" id="registrar"
+                      value="Registrarse">
+                      
+                  <div class="col"></div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col"></div>
+                  <label for="">¿Ya tienes cuenta?</label>
+                  <div class="col"></div>
+              </div>
+              <div class="row">
+                  <div class="col"></div>
+                  <a role="button" class="btn back-verde red-log" style="color: white;" id="https://runtimetestbeta.lappiz.io/#/auth/login/MercaFruta_Lappiz">Iniciar sesión</a>
+
+                  <div class="col"></div>
+              </div>
+              <br>
+          </div>
+
+          <div class="col back-verde" style="width: 50%; justify-content: center;">
+              <br>
+              <div class="row"></div>
+              <br>
+              <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col">
+                      <div class="back-verde" style="text-align: center;">
+                          <h3 style="color: white;">Conviértete en nuestro proveedor</h3>
+                          <br>
+                          <span style="color: white;">¿Quieres ser proveedor de Frutanet?</span>
+                          <br>
+                          <span style="color: white;">¡Regístrate y empieza ya!</span>
+                          <br>
+                          <br>
+                          <a class="btn back-claro red-prov" id="https://runtimetestbeta.lappiz.io/#/forms?viewName=MercaFruta_Lappiz_Anonimo&entityId=d78adbad-a584-4ca8-83ff-2077939b0da4&entityName=MercaFruta_Lappiz_Anonimo&appViewId=5c772004-0515-4e52-93d2-17b07e299157" role="button" >Registrarse </a>
+                      </div>
+                  </div>
+                  <div class="col-2"></div>
+              </div>
+              <br>
+              <div class="row"></div>
+              <br>
+          </div>
+      </div>
+      <!-- <div class="row" style="height: 20%;"></div> -->
+  </form>
+</div>
+
+<script>
+  let email = document.querySelector('#email')
+  let password = document.querySelector('#password')
+  let password2 = document.querySelector('#password2')
+
+  let form = document.querySelector('#regForm')
+  let inputs = document.querySelectorAll('#regForm input');
+
+  let correoRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+  let passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*+._-])[a-zA-Z0-9!@#$%^&*+._-]{6,16}$/
+
+  let isRequired = value => value === '' ? false : true
+
+  let isEmailValid = (email) => {
+      return correoRegex.test(email)
+  }
+
+  let isPasswordValid = (password) => {
+      return passRegex.test(password)
+  }
+
+  let checkEmail = () => {
+      let valid = false
+      let chEmail = email.value
+      if (!isRequired(chEmail)) {
+          showError(email, "Debe ingresar un email")
+      } else if (!isEmailValid(chEmail)) {
+          showError(email, "El correo solo puede contener letras, números, puntos, guiones y guion bajo")
+      } else {
+          showSuccess(email)
+          valid = true
+      }
+      return valid
+  }
+
+  let checkPassword = () => {
+      let valid = false
+      let chPass = password.value
+      if (!isRequired(chPass)) {
+          showError(password, "Debe ingresar una contraseña")
+      } else if (!isPasswordValid(chPass)) {
+          showError(password, "La contraseña debe ser de 6 dígitos, debe contener mínimo un número y un caracter especial")
+      } else {
+          showSuccess(password)
+          valid = true
+      }
+      return valid
+  }
+
+  let checkPassword2 = () => {
+      let valid = false
+      let pass1 = password.value
+      let pass2 = password2.value
+      if (!isRequired(pass2)) {
+          showError(password2, "Debe ingresar de nuevo su contraseña")
+      } else if (pass1 != pass2) {
+          showError(password2, "Las contraseñas no son iguales")
+      } else {
+          showSuccess(password2)
+          valid = true
+      }
+      return valid
+  }
+
+
+  let showError = (input, message) => {
+      // get the col-sm element
+      let formField = input.parentElement;
+      // add the error class
+      formField.classList.remove('success')
+      formField.classList.add('error')
+
+      // show the error message
+      let error = formField.querySelector('small')
+      error.textContent = message
+  }
+
+  let showSuccess = (input) => {
+      // get the col-sm element
+      let formField = input.parentElement
+
+      // remove the error class
+      formField.classList.remove('error')
+      formField.classList.add('success')
+
+      // hide the error message
+      let error = formField.querySelector('small')
+      error.textContent = ''
+  }
+
+  let validarFormulario = (e) => {
+      switch (e.target.id) {
+          case 'email':
+              checkEmail()
+              break
+          case 'password':
+              checkPassword()
+              break
+          case 'password2':
+              checkPassword2()
+              break
+      }
+  }
+
+  inputs.forEach((input) => {
+      input.addEventListener('keyup', validarFormulario);
+
+  });
+
+
+</script>
+<style>
+  .success {
+      color: aqua;
+  }
+
+  .back-verde {
+      background-color: #6CA90E;
+      color: white;
+  }
+  .back-claro {
+      background-color: #A2CF2A;
+      color: white;
+  }
+
+  .error {
+      color: red;
+  }
+
+  .carrot {
+      background-color: aqua;
+  }
+</style>
