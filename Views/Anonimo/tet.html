@@ -4,9 +4,9 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
   .bor-barra-cat {
     border-width: thin;
@@ -171,8 +171,40 @@
     transform: translate(0, -50%)
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   .cualidades>h3 {
     text-align: center;
+    display: block;
+  }
+
+  .cualidades-container {
+    padding: 30px;
+    position: relative;
+  }
+
+  .cualidades-left {
+    z-index: 2;
+    float: left;
+    width: 33.33%;
+    /* three boxes (use 25% for four, and 50% for two, etc) */
+  }
+
+  .cualidades-center {
+    z-index: 1;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transform: translate(400px)
+  }
+
+  .cualidades-right {
+    z-index: 2;
+    float: right;
+    width: 33.33%;
+    /* three boxes (use 25% for four, and 50% for two, etc) */
   }
 </style>
 <div class="land">
@@ -370,24 +402,97 @@
   <div class="cualidades">
     <h3>Cualidades</h3>
     <div class="cualidades-container">
+      <img class="cualidades-center"
+        src="https://media.istockphoto.com/photos/paper-bag-with-various-food-fresh-vegetables-fruits-and-bread-picture-id1180941596?k=6&m=1180941596&s=170667a&w=0&h=gn-471L0eZ5nqwB44K-4-OJ7PAPcg0bn8DmkwBYLzQE="
+        alt="bolsa de productos">
       <div class="cualidades-left">
         <div class="row">
           <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet. Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt autem dolores!</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
             <li>
-              <p>Stats icon on a styled link button:
-        <a href="#" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-stats"></span>
-        </a>
-      </p> 
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-stats"></span>
+                </a>
+              </p>
             </li>
           </ul>
         </div>
-        <div class="row"></div>
-        <div class="row"></div>
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
+            <li>
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-leaf"></span>
+                </a>
+              </p> 
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
+            <li>
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-headphones"></span>
+                </a>
+              </p> 
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="cualidades-center"></div>
-      <div class="cualidades-right"></div>
+      <div class="cualidades-right">
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
+            <li>
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-usd"></span> 
+                </a>
+              </p> 
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
+            <li>
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-inbox"></span>
+                </a>
+              </p> 
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente quaerat expedita quia suscipit amet.
+              Tempora nihil quisquam expedita provident velit fugiat, reiciendis accusamus ex officia a, cum, incidunt
+              autem dolores!</li>
+            <li>
+              <p>
+                <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-thumbs-up"></span>
+                </a>
+              </p> 
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
