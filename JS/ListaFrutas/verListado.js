@@ -231,6 +231,7 @@ if (idVista == "d62fe482-8ab0-4322-844d-c5c892598dbc") {
                     </tr>`;
                 });
             }
+            
 
             var modalFactura = ` 
                 <div class="modal-header">
