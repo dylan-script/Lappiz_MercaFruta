@@ -1,0 +1,20 @@
+MercaFruta_Lappiz_Users
+TablaId=b0524d31-2bd5-4da4-ab77-25c1c23866b5
+AppViewId=60c67c27-2496-4ed8-ad24-eeac4235c582
+
+ProductList: 1e39996a-8b35-43fb-a956-1395c098acc0
+RegistroForm: 5c772004-0515-4e52-93d2-17b07e299157
+CompradorForm: 8bb1e803-0a8d-4ec6-b6b9-1e596d16edbb
+LandingPage: d78adbad-a584-4ca8-83ff-2077939b0da4
+OtroRegistro: a29754b8-237c-4b1b-9cce-59eb9a32640a
+cd /mnt/c/users/dilan.jimenez/Documents/Recursos
+ClienteFK
+CampoId=b20368b0-4fe4-40a4-8d49-5c3cc5fcab16
+Probabilidad: a89adfd2-c2a1-45f0-95a0-5e3250bbb988
+Casi Cierto, Probable, Posible, Poco Probable, Raro
+
+Impacto: 1290237b-12e6-43a6-9d5d-4c1fe0bbe925
+Catastrófico, Mayor, Moderado, Menor, Insignificante
+
+Valor
+c6215f7c-d692-46a5-8450-26c14574e25f
