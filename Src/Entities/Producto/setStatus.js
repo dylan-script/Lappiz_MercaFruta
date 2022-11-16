@@ -38,7 +38,6 @@ setTimeout(() => {
           content: 'Hola mundo Lappiz desde un archivo!'
         }
       ]
-      var cc = ["somuguyibru-6731@yopmail.com"]
 
 
     } else {
@@ -119,4 +118,4 @@ setTimeout(() => {
 
   }
 
-}, 1000);
+}, 3000);

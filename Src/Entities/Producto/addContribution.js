@@ -4,7 +4,7 @@ setTimeout(() => {
     console.log(e.dataItem)
     if (appViewId == '8b905cbc-ad73-4f90-99d8-6cb8aaca83bb') {
         if (typeof e.dataItem.EstadoCotizacion === 'undefined') {
-            alert('Some')
+            alert('Error')
         } else if (e.dataItem.EstadoCotizacion == 'Aprobado') {
             var StringQuery = `INSERT INTO MercaFruta_Lappiz_Contrato (Estado, ProductoFK) VALUES('En revision', '${e.dataItem.Id}')`;
 
@@ -28,10 +28,10 @@ setTimeout(() => {
                 }
             ]
             var cc = ["somuguyibru-6731@yopmail.com"]
-            var bcc = ["somuguyibru-6731@yopmail.com"]
+            var bcc = [""]
 
             sendEmail(email, subject, text, HTML, attachments, cc, bcc).then(function (response) {
-                toastr.info('Se ha enviado el correo al gestión de contratos');
+                toastr.info('Se ha enviado el correo a la gestión de contratos');
             }, function (error) {
                 toastr.warning('Ha ocurrido un error al enviar el correo');
             });

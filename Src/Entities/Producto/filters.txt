@@ -1,32 +1,32 @@
 //Estados 
-Aprobado, Denegado, Atencion, revision
+Aprobado, denegado, observacion, revision
 //Filtro por Fecha
  #UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$orderby=FechaCotizacion desc
 
 //Atención de Observaciones filtrado por ProveedorFk
 
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq ' Atencion' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'observacion' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //Atención de Observaciones en Total
 
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq ' Atencion'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'observacion'&$orderby=FechaCotizacion desc
 
 //En revisión filtrado por ProveedorFk
 
- #UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'revision' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'revision' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //En revisión en Total
 
 #UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'revision'&$orderby=FechaCotizacion desc
 
 //Aprobadas filtrado por ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'Aprobado' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'Aprobado' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //Aprobadas en Total
 #UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'Aprobado'&$orderby=FechaCotizacion desc
 
 //Denegado filtrado por ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq ' Denegado' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'denegado' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //Denegado en Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq ' Denegado'&$orderby=FechaCotizacion desc
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.EstadoCotizacion eq 'denegado'&$orderby=FechaCotizacion desc
