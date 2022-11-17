@@ -1,0 +1,17 @@
+Cotizaciones:
+1.Recibida -> En Revisión 
+2.En Revisión -> Devuelta con Observación, Aprobada, No Aprobada
+3.Devuelta con Observación -> Recibida con Ajuste
+4.Recibida con Ajuste -> Aprobada, No Aprobada 
+5.No Aprobada
+6.Aprobada
+
+Contratos:
+1.En Elaboración
+2.En Revisión
+3.Enviado para Firma
+4.Recibido
+5.Legalizado
+
+Gestión de Pagos:
+1. Pago 
