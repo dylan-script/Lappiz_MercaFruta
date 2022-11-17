@@ -1,6 +1,6 @@
 setTimeout(() => {
   debugger
-  if (sessionStorage.rolesId == 'd9bbb3d4-3640-4ae2-a980-d2ccfbd13d3c') {
+  if (sessionStorage.rolesId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
     var StringQuery = `SELECT Id FROM MercaFruta_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
     execQuery(StringQuery).then(function (response) {
       var dataResult = response[0];
