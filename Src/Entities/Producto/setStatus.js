@@ -1,5 +1,5 @@
 setTimeout(() => {
-  var status = '';
+  var status = e.dataItem.EstadoCotizacion;
   var email;
   var subject = 'Estado de la Cotización';
   var text = 'Estado de Cotización en revisión';
@@ -12,8 +12,9 @@ setTimeout(() => {
   ]
   var cc = [""]
   var bcc = [""]
-
+  var now = new Date().toLocaleString().replace(",", "").replace(/:.. /, " ");
   debugger
+  //Proveedor
   if (sessionStorage.rolesId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
     email = JSON.parse(sessionStorage.LappizUser).Email
     cc.push('somuguyibru-6731@yopmail.com')
@@ -21,8 +22,8 @@ setTimeout(() => {
       console.log('Agregando estado...');
       getProveedor(0);
       status = 'revision'
-      var StringQuery = `UPDATE MercaFruta_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
-      execQuery(StringQuery).then(function (response) {
+      var providerQuery = `UPDATE MercaFruta_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
+      execQuery(providerQuery).then(function (response) {
         var dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
@@ -40,8 +41,17 @@ setTimeout(() => {
       ]
 
 
-    } else {
-      status = e.dataItem.EstadoCotizacion
+    } else if (e.dataItem.EstadoCotizacion == 'Devuelta con Observación') {
+      console.log('Pendiente para el estado faltante')
+      var ODataQuery = `UPDATE MercaFruta_Lappiz_Productos SET OData = 'F', EstadoCotizacion = 'Recibida con Ajuste' WHERE Id='${e.dataItem.Id}'`;
+      execQuery(ODataQuery).then(function (response) {
+        var dataResult = response[0];
+        //imprimir resultado de la consulta
+        debugger
+        console.log(dataResult);
+      }, function (error) {
+        console.log(error);
+      });
     }
 
 
@@ -51,6 +61,7 @@ setTimeout(() => {
 
 
   } else {
+    //Administrador de Cotizaciones
     getProveedor(1)
 
     email = sessionStorage.ProveedorEmail;
@@ -63,7 +74,6 @@ setTimeout(() => {
       }
     ]
     cc.push(JSON.parse(sessionStorage.LappizUser).Email)
-    status = e.dataItem.EstadoCotizacion
 
 
   }
@@ -78,8 +88,8 @@ setTimeout(() => {
   function getProveedor(option) {
     debugger
     if (option == 0) {
-      var StringQuery = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
-      execQuery(StringQuery).then(function (response) {
+      var userQuery = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
+      execQuery(userQuery).then(function (response) {
         var dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
@@ -91,10 +101,21 @@ setTimeout(() => {
         console.log(error);
       });
     } else {
-      var StringQuery = `SELECT ProveedorFk FROM MercaFruta_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
+
+      var ODataQuery = `UPDATE MercaFruta_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
+      execQuery(ODataQuery).then(function (response) {
+        var dataResult = response[0];
+        //imprimir resultado de la consulta
+        debugger
+        console.log(dataResult);
+      }, function (error) {
+        console.log(error);
+      });
+
+      var productsQuery = `SELECT ProveedorFk FROM MercaFruta_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
 
 
-      execQuery(StringQuery).then(function (response) {
+      execQuery(productsQuery).then(function (response) {
         var dataResult1 = response[0];
         //imprimir resultado de la consulta
         debugger
@@ -104,8 +125,8 @@ setTimeout(() => {
         console.log(`Id Proveedor en el sessionStorage: ${sessionStorage.ProveedorFk}`);
 
       });
-      var StringQuery2 = `SELECT Email FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
-      execQuery(StringQuery2).then(function (response1) {
+      var emailQuery = `SELECT Email FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
+      execQuery(emailQuery).then(function (response1) {
         debugger
         var dataResult2 = response1[0]
         console.log(dataResult2);
