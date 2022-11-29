@@ -9,4 +9,4 @@ setTimeout(() => {
       disableField('32296ffc-a4c5-4c03-8f93-591e28fa057f', false);
     }
   }
-}, 100);
+}, 2000);

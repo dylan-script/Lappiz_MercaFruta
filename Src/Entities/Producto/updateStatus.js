@@ -12,7 +12,7 @@ setTimeout(() => {
   ]
   var cc = [""]
   var bcc = [""]
-  var now = new Date().toLocaleString().replace(",", "").replace(/:.. /, " ");
+  var now = new Date().toLocaleString().replace(",","").replace(/:.. /," ");
   debugger
   //Proveedor
   if (sessionStorage.rolesId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
@@ -41,7 +41,7 @@ setTimeout(() => {
       ]
 
 
-    } else if (e.dataItem.EstadoCotizacion == 'Devuelta con Observación') {
+    } else if(e.dataItem.EstadoCotizacion == 'Devuelta con Observación'){
       console.log('Pendiente para el estado faltante')
       var ODataQuery = `UPDATE MercaFruta_Lappiz_Productos SET OData = 'F', EstadoCotizacion = 'Recibida con Ajuste' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {

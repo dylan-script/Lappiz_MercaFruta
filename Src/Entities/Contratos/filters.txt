@@ -1,5 +1,26 @@
-Estados del Contrado:
-revision,firmado,denegado
+Estados del Contrato      || OData 
+-------------------------------------
+En Elaboración            ||    A
+En Revisión               ||    B
+Enviado para Firma        ||    C
+Recibido                  ||    D
+Legalizado                ||    E
+No Legalizado             ||    F
+
+//En Elaboración Total
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Contrato?$filter=MercaFruta_Lappiz_Contrato.OData eq 'A'&$orderby=FechaCreacion desc
+
+//En Elaboración filtrado por ProveedorFk
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Contrato?$filter=MercaFruta_Lappiz_Contrato.OData eq 'A' and MercaFruta_Lappiz_Contrato.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCreacion desc
+
+//En Revisión Total
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Contrato?$filter=MercaFruta_Lappiz_Contrato.OData eq 'B'&$orderby=FechaCreacion desc
+
+//En Revisión filtrado por ProveedorFk
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Contrato?$filter=MercaFruta_Lappiz_Contrato.OData eq 'B' and MercaFruta_Lappiz_Contrato.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCreacion desc
+
+//Enviado para Firma en Total
+#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Contrato.OData eq 'C'&$orderby=FechaCreacion desc
 
 //Filtro por Fecha
  #UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Contrato?$orderby=FechaCotizacion desc
