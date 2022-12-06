@@ -61,7 +61,7 @@ function sendMessage(email, subject, cc, bcc, productName, comments, status, pro
               ${comments}. 
             </p>
             <p>
-              <a href="https://runtimetest.lappiz.io/#/auth/login/MercaFruta_Lappiz"
+              <a href="https://runtimetest.lappiz.io/#/auth/login/FrutaNet_Lappiz"
                 style="text-decoration: none;
                   color:black;
                   border: 2px solid #4cb96b;

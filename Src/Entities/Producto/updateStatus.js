@@ -17,7 +17,7 @@ setTimeout(() => {
       status = 'Recibida'
       subject = `Producto ${e.dataItem.Nombre} recibido`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre}. Le notificaremos por este mismo medio el momento en que iniciemos el proceso de revisión. Queda tenga un buen día`
-      var providerQuery = `UPDATE MercaFruta_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
+      var providerQuery = `UPDATE FrutaNet_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
       debugger
       execQuery(providerQuery).then(function (response) {
         var dataResult = response[0];
@@ -33,7 +33,7 @@ setTimeout(() => {
       status = 'Recibida con Ajuste'
       subject = `Producto ${e.dataItem.Nombre} recibido con ajuste`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre} con los respectivos ajustes solicitados. Le notificaremos en los próximos días si se aprueba o no su cotización. Queda tenga un buen día`
-      var ODataQuery = `UPDATE MercaFruta_Lappiz_Productos SET OData = 'F', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
+      var ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = 'F', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
         var dataResult = response[0];
         //imprimir resultado de la consulta
@@ -75,7 +75,7 @@ setTimeout(() => {
   function getProveedor(option) {
     debugger
     if (option == 0) {
-      var userQuery = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
+      var userQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
       execQuery(userQuery).then(function (response) {
         var dataResult = response[0];
         //imprimir resultado de la consulta
@@ -91,7 +91,7 @@ setTimeout(() => {
       });
     } else {
 
-      var ODataQuery = `UPDATE MercaFruta_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
+      var ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
         var dataResult = response[0];
         //imprimir resultado de la consulta
@@ -101,7 +101,7 @@ setTimeout(() => {
         console.log(error);
       });
 
-      var productsQuery = `SELECT ProveedorFk FROM MercaFruta_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
+      var productsQuery = `SELECT ProveedorFk FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
 
       execQuery(productsQuery).then(function (response) {
         var dataResult1 = response[0];
@@ -115,7 +115,7 @@ setTimeout(() => {
         console.log(error);
       });
 
-      var emailQuery = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
+      var emailQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
       execQuery(emailQuery).then(function (response1) {
         var dataResult2 = response[0];
         //imprimir resultado de la consulta

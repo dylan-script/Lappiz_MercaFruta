@@ -8,42 +8,42 @@ No Aprobada               ||    E
 Recibida con Ajuste       ||    F
 
 //Recibidas en Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'A'&$orderby=FechaCotizacion desc 
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'A'&$orderby=FechaCotizacion desc 
 
 //Recibidas filtradas por el ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'A' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'A' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //En Revisión Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'B'&$orderby=FechaCotizacion desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'B'&$orderby=FechaCotizacion desc
 
 //En Revisión filtradas por el ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'B' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'B' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaCotizacion desc
 
 //Devueltas con Observación en Total
 
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'C'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'C'&$orderby=FechaRevision desc
 
 //Devuelta con Observación filtradas por ProveedorFk
 
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'C' and MercaFruta_Lappiz_Productos.FechaRevision eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'C' and FrutaNet_Lappiz_Productos.FechaRevision eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
 
 
 //Aprobadas en Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'D'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'D'&$orderby=FechaRevision desc
 
 
 //Aprobadas filtradas por ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'D' and MercaFruta_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'D' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
 
 //No Aprobadas en Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'E'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'E'&$orderby=FechaRevision desc
 
 
 //No Aprobadas filtradas por ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'E' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'E' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
 
 //Recibidas con Ajuste en Total
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'F'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'F'&$orderby=FechaRevision desc
 
 //Recibidas con Ajuste filtradas por ProveedorFk
-#UrlBase#/MercaFruta_Lappiz.api/api/MercaFruta_Lappiz_Productos?$filter=MercaFruta_Lappiz_Productos.OData eq 'F' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'F' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc

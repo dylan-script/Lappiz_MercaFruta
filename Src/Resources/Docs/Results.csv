@@ -1,0 +1,11 @@
+Id,FullName,Email,Phone,Address,Photo,Contrasena,Activo,DeviceId,UserLdap
+5f2b9878-3de0-4be3-a871-f34971514596,Dilan Jimenez Arroyave,dilanjimenez140@gmail.com,3243242,clll,NULL,123456*,1,NULL,NULL
+594b1e5c-040b-4cb7-8545-beeb48fbaaad,Admin Frutanet,admin@mercafruta.com,NULL,NULL,NULL,Fruta.2022,1,NULL,NULL
+df1cfc8f-b8a4-407c-a3a7-b81f5a0a94a1,Proveedor de Prueba,vebreigrouwaucou-7139@yopmail.com,NULL,NULL,NULL,Proveedor@123.,1,NULL,NULL
+81f673a8-ef37-47da-9913-a8607b884196,Comprador de Prueba,rudeudoloippoi-6330@yopmail.com,NULL,NULL,NULL,Merca@123.,1,NULL,NULL
+657229be-99b7-4a83-93f7-a268624602c9,a a,test.merca@yopmail.com,1212121212,a,NULL,Hola123.,1,NULL,NULL
+eec9059c-896e-4a7c-ab7c-7a5b2070d358,Cotizaciones de Prueba,somuguyibru-6731@yopmail.com,NULL,NULL,NULL,Cotizaciones@123.,1,NULL,NULL
+bf81093a-1286-49c8-9983-6fab3b0e35f4,nombre provisional,compra.merca@yopmail.com,NULL,NULL,NULL,Hola123.,1,NULL,NULL
+fbfbc9f0-d84f-4e8d-aed1-5151826f5485,Proveedor de Prueba 2,poixouppecroufra-2239@yopmail.com,NULL,NULL,NULL,Prov.123456,1,NULL,NULL
+56ee67c2-c8c9-40ee-bc1b-4e6d7f775ba3,Persona encargada de los contratos,leijeiwugatte-8478@yopmail.com,NULL,NULL,NULL,Contratos.2022,1,NULL,NULL
+d84b4479-8fe8-49a8-ac27-18908177cd5d,nombre provisional,djimenez202@misena.edu.co,NULL,NULL,NULL,123456*,1,NULL,NULL

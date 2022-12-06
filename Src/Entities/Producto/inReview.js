@@ -3,7 +3,7 @@ function getData() {
     debugger
     console.log(e.dataItem)
     var status = 'En Revisión';
-    var updateQuery = `UPDATE MercaFruta_Lappiz_Productos SET EstadoCotizacion = '${status}', OData = 'B' WHERE Id = '${e.dataItem.Id}'`;
+    var updateQuery = `UPDATE FrutaNet_Lappiz_Productos SET EstadoCotizacion = '${status}', OData = 'B' WHERE Id = '${e.dataItem.Id}'`;
     execQuery(updateQuery).then(function (response) {
       debugger
       var dataResult = response[0];
@@ -15,7 +15,7 @@ function getData() {
       toastr.warning('Ha ocurrido un inconveniente. Comunicar con el equipo de soporte.');
     });
 
-    var selectQuery = `SELECT ProveedorFk, Nombre FROM MercaFruta_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
+    var selectQuery = `SELECT ProveedorFk, Nombre FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
     execQuery(selectQuery).then(function (response) {
       debugger
       var dataResult = response[0];
@@ -30,7 +30,7 @@ function getData() {
       toastr.warning('Ha ocurrido un inconveniente. Comunicar con el equipo de soporte.');
     });
 
-    var selectProv = `SELECT Nombre, Apellido, Email FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.IdProvider}'`;
+    var selectProv = `SELECT Nombre, Apellido, Email FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.IdProvider}'`;
     execQuery(selectProv).then(function (response) {
       debugger
       var dataResult = response[0];
@@ -47,7 +47,7 @@ function getData() {
 
 
     //location.reload();
-    var urlList = '#/grids?viewName=MercaFruta_Lappiz_Productos&workspaceId=e5b03115-2a14-4956-833a-10796e1dd2d4&entityId=3236f5d9-3fc5-4cdf-86c3-e1d2b3815b66&dato=Recibidas&appViewId=0d952afb-2a18-4de3-aa61-66f0cd801a15';
+    var urlList = '#/grids?viewName=FrutaNet_Lappiz_Productos&workspaceId=e5b03115-2a14-4956-833a-10796e1dd2d4&entityId=3236f5d9-3fc5-4cdf-86c3-e1d2b3815b66&dato=Recibidas&appViewId=0d952afb-2a18-4de3-aa61-66f0cd801a15';
     goLocation(urlList);
 
     debugger
@@ -120,7 +120,7 @@ function sendMessage(email, subject, cc, bcc, productName, comments, status, pro
               ${comments}. 
             </p>
             <p>
-              <a href="https://runtimetest.lappiz.io/#/auth/login/MercaFruta_Lappiz"
+              <a href="https://runtimetest.lappiz.io/#/auth/login/FrutaNet_Lappiz"
                 style="text-decoration: none;
                   color:black;
                   border: 2px solid #4cb96b;

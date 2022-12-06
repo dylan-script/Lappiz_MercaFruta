@@ -8,7 +8,7 @@ function getProv(rolId) {
   //Proveedor
   if (rolId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
     debugger
-    query = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
+    query = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
     execQuery(query).then(function (response) {
       var dataResult = response[0];
       //imprimir resultado de la consulta

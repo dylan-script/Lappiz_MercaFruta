@@ -3,10 +3,10 @@ function Provider(option) {
   //Proveedor
   if (option == 0) {
     debugger
-    query = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
+    query = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
   } else if (option == 1) {
     debugger
-    query = `SELECT * FROM MercaFruta_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
+    query = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
   }
   execQuery(query).then(function (response) {
     var dataResult = response[0];

@@ -7,7 +7,7 @@ setTimeout(() => {
       debugger
       // var urltoken = `${backandGlobal.url}/token`;
       var urlquery = `${backandGlobal.api2}/${sessionStorage.workspace}.api/api/lappiz/sp/query`
-      var products = 'select * from MercaFruta_Lappiz_Productos where CantidadDetal > 0 OR CantidadMayor > 0 order by Nombre asc';
+      var products = 'select * from FrutaNet_Lappiz_Productos where CantidadDetal > 0 OR CantidadMayor > 0 order by Nombre asc';
       var data = returnQuery(products, urlquery);
       // var data = returnQuery(products, urltoken, urlquery);
       let mayor = data[0].Precio
@@ -165,7 +165,7 @@ setTimeout(() => {
                   aux_mayor = parseInt(data[index].CantidadMayor)
 
 
-                  var prom = `select Porcentaje from MercaFruta_Lappiz_Promocion WHERE ProductoFk = '${data[index].Id}'`;
+                  var prom = `select Porcentaje from FrutaNet_Lappiz_Promocion WHERE ProductoFk = '${data[index].Id}'`;
                   var desc = returnQuery(prom, urlquery);
 
                   body = ``, footer = ``; header = ``
