@@ -55,10 +55,10 @@ setTimeout(() => {
         productStatus = 'Aprobado'
         break;
 
-        case 'No Aprobada':
+      case 'No Aprobada':
         productStatus = 'No Aprobado'
         break;
-    
+
       default: productStatus = 'Devuelto con Observación'
         break;
     }
