@@ -20,8 +20,8 @@ function getProv(rolId) {
     }, function (error) {
       console.log(error);
     });
-  }else{
-      sessionStorage.Proveedor = 'Not yet';
-      console.log(sessionStorage.Proveedor);
+  } else {
+    sessionStorage.Proveedor = 'Not yet';
+    console.log(sessionStorage.Proveedor);
   }
 }
