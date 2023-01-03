@@ -7,6 +7,17 @@ setTimeout(() => {
   var bcc = [""]
   var now = new Date().toLocaleString().replace(",", "").replace(/:.. /, " ");
   debugger
+  if(sessionStorage.isProduct == true){
+    let specieQuery = `UPDATE FrutaNet_Lappiz_Productos SET Especie = '${sessionStorage.Specie}', Variedad = '${sessionStorage.Variety}', Nombre = '${sessionStorage.CommonName}', NombreCientifico = '${sessionStorage.ScientifictName}' WHERE Id = '${e.dataItem.Id}'`
+    execQuery(specieQuery).then(function (response) {
+      var dataResult = response[0];
+      //imprimir resultado de la consulta
+      debugger
+      console.log(dataResult);
+    }, function (error) {
+      console.log(error);
+    });
+  }
   //Proveedor
   if (sessionStorage.rolesId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
     email = JSON.parse(sessionStorage.LappizUser).Email
