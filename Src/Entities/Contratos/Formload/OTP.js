@@ -3,8 +3,7 @@ setTimeout(function () {
   console.log(appViewId);
   if (appViewId == 'fe5fe785-b651-4639-90e5-19c225ea040d') {
     debugger
-    const code = getRandomInt();
-    sendCode(code)
+    
     //Recibe elemento
     const handleOnPasteOTP = (e) => {
       const data = e.clipboardData.getData("text");
@@ -68,10 +67,12 @@ setTimeout(function () {
       document.getElementById("btn-ok").classList.remove("disabled");
 
       // Aca va a validar el codigo OTP
-      if (otp == code) {
+      if (otp == sessionStorage.Code) {
         debugger
         console.log("Codigo OTP correcto");
         toastr.success('Código Correcto');
+        const ProviderSign = '6c1635b3-7dcd-423b-b4b6-0cdc3f2bf677';
+        visibilityField(ProviderSign, true);
       } else {
         debugger
         console.log("Codigo OTP incorrecto");
@@ -97,36 +98,4 @@ setTimeout(function () {
   }
 }, 200);
 
-function getRandomInt() {
-  debugger
-  const first = Math.floor(Math.random() * 10);
-  const second = Math.floor(Math.random() * 10);
-  const third = Math.floor(Math.random() * 10);
-  const fourth = Math.floor(Math.random() * 10);
-  const fifth = Math.floor(Math.random() * 10);
-  const sixth = Math.floor(Math.random() * 10);
-  console.log(`${first}${second}${third}${fourth}${fifth}${sixth}`);
 
-  return `${first}${second}${third}${fourth}${fifth}${sixth}`
-}
-
-function sendCode(cod) {
-  var email = `${JSON.parse(sessionStorage.LappizUser).Email}`;
-  var subject = 'My life is a bug';
-  var text = '';
-  var HTML = `<h1>Su código de verificación es ${cod}</h1>`;
-  var attachments = [
-    {
-      filename: 'test.txt',
-      content: 'Hola mundo Lappiz desde un archivo!'
-    }
-  ]
-  var cc = [""]
-  var bcc = [""]
-
-  sendEmail(email, subject, text, HTML, attachments, cc, bcc).then(function (response) {
-    toastr.info('Se ha enviado el correo su código de verificación');
-  }, function (error) {
-    toastr.warning('Ha ocurrido un error al enviar el correo');
-  });
-}

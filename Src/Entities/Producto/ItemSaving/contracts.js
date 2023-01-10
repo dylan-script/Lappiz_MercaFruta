@@ -8,7 +8,7 @@ setTimeout(() => {
     let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
     let dateTime = cDate + ' ' + cTime;
     console.log(dateTime);
-    const StringQuery = `INSERT INTO FrutaNet_Lappiz_Contrato (Estado, OData, ProductoFK,ProveedorFk, FechaCreacion) VALUES('En Elaboración', 'A', '${e.dataItem.Id}', '${e.dataItem.ProveedorFk}', '${dateTime}')`;
+    const StringQuery = `INSERT INTO FrutaNet_Lappiz_Contrato (Estado, OData, ProductoFK, FechaCreacion) VALUES('En Elaboración', 'A', '${e.dataItem.Id}', '${dateTime}')`;
 
 
     execQuery(StringQuery).then(function (response) {
