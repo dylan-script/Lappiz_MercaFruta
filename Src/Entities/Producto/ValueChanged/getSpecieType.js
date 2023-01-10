@@ -1,9 +1,10 @@
 setTimeout(() => {
+  debugger
   console.clear()
-  let type = getFieldValue('7c2bd4bf-1690-40b2-9655-0ccc84117dcd');
-  let specieQuery = `SELECT CENombre FROM FrutaNet_Lappiz_Especie WHERE Tipo = '${type}'`;
+  const id = getFieldValue('f225fbfe-be9e-4b82-a0ba-d8757fd77fd5');
+  const specieQuery = `SELECT Id, CENombre FROM FrutaNet_Lappiz_Especie WHERE TipoFk = '${id}'`;
   execQuery(specieQuery).then(function (response) {
-    var dataResult = response[0];
+    const dataResult = response[0];
     //imprimir resultado de la consulta
     console.log(dataResult);
     sessionStorage.Specie = dataResult[0].CENombre;

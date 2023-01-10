@@ -1,16 +1,17 @@
 setTimeout(() => {
-  var status = e.dataItem.EstadoCotizacion;
-  var email;
-  var subject = '';
-  var comments = ''
-  var cc = [""]
-  var bcc = [""]
-  var now = new Date().toLocaleString().replace(",", "").replace(/:.. /, " ");
+  let status = e.dataItem.EstadoCotizacion;
+  let email;
+  let subject = '';
+  let comments = ''
+  let cc = [""]
+  let bcc = [""]
+  const now = new Date().toLocaleString().replace(",", "").replace(/:.. /, " ");
   debugger
-  if(sessionStorage.isProduct == true){
-    let specieQuery = `UPDATE FrutaNet_Lappiz_Productos SET Especie = '${sessionStorage.Specie}', Variedad = '${sessionStorage.Variety}', Nombre = '${sessionStorage.CommonName}', NombreCientifico = '${sessionStorage.ScientifictName}' WHERE Id = '${e.dataItem.Id}'`
+  if (!e.dataItem.Existe) {
+    debugger
+    const specieQuery = `UPDATE FrutaNet_Lappiz_Productos SET Especie = '${sessionStorage.Specie}', Variedad = '${sessionStorage.Variety}', Nombre = '${sessionStorage.CommonName}', NombreCientifico = '${sessionStorage.ScientifictName}' WHERE Id = '${e.dataItem.Id}'`
     execQuery(specieQuery).then(function (response) {
-      var dataResult = response[0];
+      const dataResult = response[0];
       //imprimir resultado de la consulta
       debugger
       console.log(dataResult);
@@ -28,10 +29,10 @@ setTimeout(() => {
       status = 'Recibida'
       subject = `Producto ${e.dataItem.Nombre} recibido`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre}. Le notificaremos por este mismo medio el momento en que iniciemos el proceso de revisión. Queda tenga un buen día`
-      var providerQuery = `UPDATE FrutaNet_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
+      const providerQuery = `UPDATE FrutaNet_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
       debugger
       execQuery(providerQuery).then(function (response) {
-        var dataResult = response[0];
+        const dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult);
@@ -44,9 +45,9 @@ setTimeout(() => {
       status = 'Recibida con Ajuste'
       subject = `Producto ${e.dataItem.Nombre} recibido con ajuste`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre} con los respectivos ajustes solicitados. Le notificaremos en los próximos días si se aprueba o no su cotización. Queda tenga un buen día`
-      var ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = 'F', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
+      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = 'F', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
-        var dataResult = response[0];
+        const dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult);
@@ -86,9 +87,9 @@ setTimeout(() => {
   function getProveedor(option) {
     debugger
     if (option == 0) {
-      var userQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
+      const userQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE UserFK = '${JSON.parse(sessionStorage.LappizUser).Id}'`;
       execQuery(userQuery).then(function (response) {
-        var dataResult = response[0];
+        const dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult);
@@ -101,10 +102,9 @@ setTimeout(() => {
         console.log(error);
       });
     } else {
-
-      var ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
+      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
-        var dataResult = response[0];
+        const dataResult = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult);
@@ -112,10 +112,10 @@ setTimeout(() => {
         console.log(error);
       });
 
-      var productsQuery = `SELECT ProveedorFk FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
+      const productsQuery = `SELECT ProveedorFk FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
 
       execQuery(productsQuery).then(function (response) {
-        var dataResult1 = response[0];
+        const dataResult1 = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult1);
@@ -126,9 +126,9 @@ setTimeout(() => {
         console.log(error);
       });
 
-      var emailQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
+      const emailQuery = `SELECT * FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.ProveedorFk}'`
       execQuery(emailQuery).then(function (response1) {
-        var dataResult2 = response[0];
+        const dataResult2 = response[0];
         //imprimir resultado de la consulta
         debugger
         console.log(dataResult2);

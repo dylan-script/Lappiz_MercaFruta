@@ -20,11 +20,20 @@ setTimeout(() => {
 setTimeout(() => {
   debugger
   console.clear()
-  sessionStorage.Variety = e.dataItem.CENombre;
-  console.log(sessionStorage.Variety);
-  sessionStorage.CommonName = e.dataItem.NombreVariedad;
-  console.log(sessionStorage.CommonName);
-  sessionStorage.ScientifictName = e.dataItem.NombreCientifico;
-  console.log(sessionStorage.ScientifictName);
+  let varietyQuery = `SELECT CENombre, NombreVariedad, NombreCientifico FROM FrutaNet_Lappiz_Variedad 
+  WHERE Id = '${e.dataItem.Id}'`;
+  execQuery(varietyQuery).then(function (response) {
+    var dataResult = response[0];
+    //imprimir resultado de la consulta
+    console.log(dataResult);
+    sessionStorage.Variety = e.dataItem.CENombre;
+    console.log(sessionStorage.Variety);
+    sessionStorage.CommonName = e.dataItem.NombreVariedad;
+    console.log(sessionStorage.CommonName);
+    sessionStorage.ScientifictName = e.dataItem.NombreCientifico;
+    console.log(sessionStorage.ScientifictName);
+  }, function (error) {
+    console.log(error);
+  });
 }, 500);
 
