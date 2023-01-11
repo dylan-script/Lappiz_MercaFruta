@@ -25,7 +25,7 @@ Recibida con Ajuste       ||    F
 
 //Devuelta con Observación filtradas por ProveedorFk
 
-#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'C' and FrutaNet_Lappiz_Productos.FechaRevision eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'C' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
 
 
 //Aprobadas en Total
@@ -40,10 +40,22 @@ Recibida con Ajuste       ||    F
 
 
 //No Aprobadas filtradas por ProveedorFk
-#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'E' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'E' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
 
 //Recibidas con Ajuste en Total
 #UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'F'&$orderby=FechaRevision desc
 
 //Recibidas con Ajuste filtradas por ProveedorFk
-#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'F' and ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Productos?$filter=FrutaNet_Lappiz_Productos.OData eq 'F' and FrutaNet_Lappiz_Productos.ProveedorFk eq '#sessionStorage.ProveedorFk#'&$orderby=FechaRevision desc
+
+
+#UrlBase#/FrutaNet_Lappiz.api/api/FrutaNet_Lappiz_Tipos?$orderby=FrutaNet_Lappiz_Tipos.CETipo asc
+
+undefinedSonarr v3.0.6.1196 running on Win Server 2016 Essentials. Running as a service under local system. Not sure what else to look for or where to look.
+A timeout was reached (60000 milliseconds) while waiting for the Sonarr service to connect.  
+
+
+The Sonarr service failed to start due to the following error: 
+The service did not respond to the start or control request in a timely fashion.  
+
+
