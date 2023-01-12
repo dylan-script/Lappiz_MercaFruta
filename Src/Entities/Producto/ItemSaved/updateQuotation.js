@@ -18,6 +18,17 @@ setTimeout(() => {
     }, function (error) {
       console.log(error);
     });
+  }else{
+    debugger
+    const specieQuery = `UPDATE FrutaNet_Lappiz_Productos SET EspecieFk = NULL, VariedadFk = NULL WHERE Id = '${e.dataItem.Id}'`
+    execQuery(specieQuery).then(function (response) {
+      const dataResult = response[0];
+      //imprimir resultado de la consulta
+      debugger
+      console.log(dataResult);
+    }, function (error) {
+      console.log(error);
+    });
   }
   //Proveedor
   if (sessionStorage.rolesId == '12ef9a54-036d-4942-a391-2c9fb6538753') {
@@ -29,7 +40,7 @@ setTimeout(() => {
       status = 'Recibida'
       subject = `Producto ${e.dataItem.Nombre} recibido`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre}. Le notificaremos por este mismo medio el momento en que iniciemos el proceso de revisión. Queda tenga un buen día`
-      const providerQuery = `UPDATE FrutaNet_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}', OData = 'A' WHERE Id='${e.dataItem.Id}'`;
+      const providerQuery = `UPDATE FrutaNet_Lappiz_Productos SET ProveedorFk = '${sessionStorage.ProveedorFk}', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
       debugger
       execQuery(providerQuery).then(function (response) {
         const dataResult = response[0];
@@ -45,7 +56,7 @@ setTimeout(() => {
       status = 'Recibida con Ajuste'
       subject = `Producto ${e.dataItem.Nombre} recibido con ajuste`
       comments = `Hemos recibido su producto ${e.dataItem.Nombre} con los respectivos ajustes solicitados. Le notificaremos en los próximos días si se aprueba o no su cotización. Queda tenga un buen día`
-      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = 'F', EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
+      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET EstadoCotizacion = '${status}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
         const dataResult = response[0];
         //imprimir resultado de la consulta
@@ -102,7 +113,7 @@ setTimeout(() => {
         console.log(error);
       });
     } else {
-      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET OData = '${sessionStorage.OData}', EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
+      const ODataQuery = `UPDATE FrutaNet_Lappiz_Productos SET EstadoCotizacion = '${status}', FechaRevision = '${now}' WHERE Id='${e.dataItem.Id}'`;
       execQuery(ODataQuery).then(function (response) {
         const dataResult = response[0];
         //imprimir resultado de la consulta

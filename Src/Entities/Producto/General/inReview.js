@@ -2,11 +2,11 @@ function getData() {
   setTimeout(() => {
     debugger
     console.log(e.dataItem)
-    var status = 'En Revisión';
-    var updateQuery = `UPDATE FrutaNet_Lappiz_Productos SET EstadoCotizacion = '${status}', OData = 'B' WHERE Id = '${e.dataItem.Id}'`;
+    const status = 'En Revisión';
+    const updateQuery = `UPDATE FrutaNet_Lappiz_Productos SET EstadoCotizacion = '${status}' WHERE Id = '${e.dataItem.Id}'`;
     execQuery(updateQuery).then(function (response) {
       debugger
-      var dataResult = response[0];
+      const dataResult = response[0];
       //imprimir resultado de la consulta
       toastr.info(`Cotización Actualizada. Estado: En Revisión`);
       console.log(dataResult);
@@ -15,10 +15,10 @@ function getData() {
       toastr.warning('Ha ocurrido un inconveniente. Comunicar con el equipo de soporte.');
     });
 
-    var selectQuery = `SELECT ProveedorFk, Nombre FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
+    const selectQuery = `SELECT ProveedorFk, Nombre FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`;
     execQuery(selectQuery).then(function (response) {
       debugger
-      var dataResult = response[0];
+      const dataResult = response[0];
       sessionStorage.IdProvider = dataResult[0].ProveedorFk
       console.log(sessionStorage.IdProvider);
       sessionStorage.ProductName = dataResult[0].Nombre
@@ -30,10 +30,10 @@ function getData() {
       toastr.warning('Ha ocurrido un inconveniente. Comunicar con el equipo de soporte.');
     });
 
-    var selectProv = `SELECT Nombre, Apellido, Email FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.IdProvider}'`;
+    const selectProv = `SELECT Nombre, Apellido, Email FROM FrutaNet_Lappiz_Proveedor WHERE Id = '${sessionStorage.IdProvider}'`;
     execQuery(selectProv).then(function (response) {
       debugger
-      var dataResult = response[0];
+      const dataResult = response[0];
       sessionStorage.FullName = `${dataResult[0].Nombre} ${dataResult[0].Apellido}`
       console.log(sessionStorage.FullName);
       sessionStorage.Email = dataResult[0].Email;
@@ -47,7 +47,7 @@ function getData() {
 
 
     //location.reload();
-    var urlList = '#/grids?viewName=FrutaNet_Lappiz_Productos&workspaceId=e5b03115-2a14-4956-833a-10796e1dd2d4&entityId=3236f5d9-3fc5-4cdf-86c3-e1d2b3815b66&dato=Recibidas&appViewId=0d952afb-2a18-4de3-aa61-66f0cd801a15';
+    const urlList = '#/grids?viewName=FrutaNet_Lappiz_Productos&workspaceId=e5b03115-2a14-4956-833a-10796e1dd2d4&entityId=3236f5d9-3fc5-4cdf-86c3-e1d2b3815b66&dato=Recibidas&appViewId=0d952afb-2a18-4de3-aa61-66f0cd801a15';
     goLocation(urlList);
 
     debugger
@@ -63,10 +63,10 @@ function sendMessage(email, subject, cc, bcc, productName, comments, status, pro
     let total = parseFloat(e.dataItem.PesoDetalValor) + parseFloat(e.dataItem.PesoMayorValor)
     let query_img = `SELECT Foto FROM FrutaNet_Lappiz_Productos WHERE Id = '${e.dataItem.Id}'`
     let prodImg = execQuery(query_img).then(function (response) {
-      var dataResult = response[0];
+      const dataResult = response[0];
       //imprimir resultado de la consulta
       console.log(dataResult);
-      var img = dataResult[0].Foto
+      const img = dataResult[0].Foto
       sessionStorage.product = dataResult[0].Foto;
       console.log(sessionStorage.product)
       return img;
@@ -74,8 +74,8 @@ function sendMessage(email, subject, cc, bcc, productName, comments, status, pro
       console.log(error);
       return error;
     });
-    var text = '';
-    var HTML = `<!-- Complete Email template -->
+    const text = '';
+    const HTML = `<!-- Complete Email template -->
 
   <body style="background-color:rgb(236, 232, 232)">
     <table align="center" border="0" cellpadding="0" cellspacing="0" width="850" bgcolor="white">
@@ -314,7 +314,7 @@ function sendMessage(email, subject, cc, bcc, productName, comments, status, pro
     </tbody>
     </table>
   </body>`;
-    var attachments = [
+    const attachments = [
       {
         filename: 'test.txt',
         content: 'Hola mundo Lappiz desde un archivo!'
